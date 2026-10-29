@@ -1,0 +1,94 @@
+name: Actualizar GoldenPicks
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Consultar datos deportivos
+        env:
+          API_KEY: ${{ secrets.API_SPORTS_KEY }}
+        run: |
+          python - <<'PY'
+          import os, json, urllib.request, urllib.parse
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          key = os.environ.get("API_KEY")
+          if not key:
+              raise SystemExit("Falta el secreto API_SPORTS_KEY")
+
+          fecha = datetime.now(
+              ZoneInfo("America/Mexico_City")
+          ).date().isoformat()
+
+          APIs = {
+              "football": (
+                  "https://v3.football.api-sports.io/fixtures"
+              ),
+              "afl": "https://v1.afl.api-sports.io/games",
+              "baseball": "https://v1.baseball.api-sports.io/games",
+          }
+
+          datos = {
+              "fecha": fecha,
+              "actualizado": datetime.now(
+                  ZoneInfo("America/Mexico_City")
+              ).isoformat(),
+              "deportes": {}
+          }
+
+          for deporte, base in APIs.items():
+              params = urllib.parse.urlencode({
+                  "date": fecha,
+                  "timezone": "America/Mexico_City"
+              })
+              req = urllib.request.Request(
+                  f"{base}?{params}",
+                  headers={"x-apisports-key": key}
+              )
+
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  resultado = json.loads(response.read().decode("utf-8"))
+
+              if resultado.get("errors"):
+                  raise SystemExit(
+                      f"Error de API en {deporte}: "
+                      f"{resultado['errors']}"
+                  )
+
+              datos["deportes"][deporte] = resultado.get("response", [])
+              print(f"{deporte}: "
+                    f"{len(datos['deportes'][deporte])} eventos")
+
+          os.makedirs("data", exist_ok=True)
+          with open("data/partidos.json", "w", encoding="utf-8") as archivo:
+              json.dump(datos, archivo, ensure_ascii=False, indent=2)
+
+          print("Datos deportivos guardados.")
+          PY
+
+      - name: Publicar datos actualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/partidos.json
+          git diff --cached --quiet || (
+            git commit -m "Actualizar datos deportivos"
+            git push
+          )
