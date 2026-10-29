@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GoldenPicks: análisis y pronósticos deportivos informativos.">
+<title>GoldenPicks | Pronósticos deportivos</title>
+<style>
+:root{--bg:#0b0e13;--panel:#131923;--panel2:#192230;--line:#273244;--text:#f5f7fb;--muted:#9ca8ba;--gold:#f5c451;--green:#70d6a1;--red:#ff9b9b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#20202a 0%,var(--bg) 45%);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:auto;padding:0 22px}.top{border-bottom:1px solid var(--line);background:#0b0e13dd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.4px;font-size:20px}.logo{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,#ffe7a0,#d49a24);color:#17130a;font-size:23px}.brand small{display:block;font-size:10px;color:var(--muted);font-weight:700;letter-spacing:2px}.navlinks{display:flex;gap:18px;align-items:center}.navlinks a{color:var(--muted);text-decoration:none;font-size:13px}.navlinks a:hover{color:var(--gold)}.btn{border:1px solid var(--line);border-radius:11px;padding:10px 15px;color:var(--text);background:var(--panel2);font-weight:750}.btn.gold{background:var(--gold);border-color:var(--gold);color:#1b1608}.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.hero{padding:55px 0 32px;display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}.eyebrow{color:var(--gold);font-weight:850;letter-spacing:2px;text-transform:uppercase;font-size:11px}.hero h1{font-size:clamp(36px,5vw,60px);line-height:1.04;letter-spacing:-2px;margin:14px 0}.hero h1 span{color:var(--gold)}.hero p{color:var(--muted);max-width:620px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hero-card{background:linear-gradient(145deg,#202b3a,#111720);border:1px solid #394456;border-radius:22px;padding:24px;box-shadow:0 20px 60px #0005}.hero-card .big{font-size:32px;font-weight:900;color:var(--gold)}.hero-card .muted{color:var(--muted);font-size:13px}.hero-card hr{border:0;border-top:1px solid var(--line);margin:18px 0}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.chip{border:1px solid var(--line);background:#121821;color:var(--muted);padding:8px 13px;border-radius:999px;font-size:13px}.chip.active{color:#17130a;background:var(--gold);border-color:var(--gold);font-weight:800}.section{padding:25px 0 38px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:18px}.section h2{font-size:25px;letter-spacing:-.5px;margin:4px 0}.sub{color:var(--muted);font-size:13px}.toolbar{display:flex;gap:10px;flex-wrap:wrap}.field{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:150px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.pick{background:linear-gradient(160deg,#171e29,#10151d);border:1px solid var(--line);border-radius:17px;padding:18px;display:flex;flex-direction:column;gap:13px;min-width:0}.pick-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.sport{color:var(--gold);font-weight:850;font-size:11px;letter-spacing:1px;text-transform:uppercase}.tag{font-size:10px;font-weight:850;border-radius:6px;padding:5px 7px;background:#243c31;color:var(--green)}.tag.demo{background:#42351c;color:#ffd783}.match{font-size:17px;font-weight:850}.meta{font-size:12px;color:var(--muted)}.prediction{background:#0b1017;border:1px solid #273244;border-radius:11px;padding:12px}.prediction small{display:block;color:var(--muted);font-size:11px}.prediction strong{display:block;margin-top:3px;font-size:15px}.reason{color:var(--muted);font-size:13px;min-height:39px}.card-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:auto;gap:10px}.odds{font-weight:900;color:var(--gold)}.text-btn{border:0;background:none;color:var(--gold);font-weight:800;padding:6px}.empty{padding:28px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);text-align:center;grid-column:1/-1}.premium{display:grid;grid-template-columns:1fr 1fr;gap:20px}.premium-box{border:1px solid #5a4821;background:linear-gradient(145deg,#272116,#141820);border-radius:18px;padding:24px}.premium-box h3{font-size:22px;margin:8px 0}.premium-box ul{padding-left:20px;color:var(--muted)}.premium-box li{margin:8px 0}.premium-note{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.formgrid .full{grid-column:1/-1}label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.formgrid input,.formgrid select,.formgrid textarea{width:100%;background:#0b1017;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px}.formgrid textarea{min-height:78px;resize:vertical}.admin-status{color:var(--muted);font-size:12px;margin-top:10px}.notice{border:1px solid #514323;background:#211c12;color:#e9d7a6;border-radius:12px;padding:14px;font-size:12px;margin:18px 0}.footer{border-top:1px solid var(--line);padding:25px 0 38px;color:var(--muted);font-size:12px}.footer strong{color:var(--text)}.hidden{display:none!important}.pill{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:5px 9px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:38px}.hero-card{max-width:600px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{gap:10px}.navlinks a{display:none}.premium{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:0 15px}.nav{min-height:66px}.brand{font-size:17px}.nav .btn{padding:8px 10px;font-size:12px}.hero h1{letter-spacing:-1.4px}.cards{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.toolbar{width:100%}.field{flex:1;min-width:0;width:100%}.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}.hero-card{padding:19px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="#" style="text-decoration:none;color:inherit"><span class="logo">♛</span><span>GOLDENPICKS<small>SPORTS INTELLIGENCE</small></span></a>
+  <nav class="navlinks"><a href="#pronosticos">Pronósticos</a><a href="#premium">Premium</a><a href="#publicar">Publicar</a></nav>
+  <button class="btn gold" onclick="document.querySelector('#premium').scrollIntoView({behavior:'smooth'})">Ver Premium ↗</button>
+</div></header>
+<main class="wrap">
+<section class="hero">
+  <div><div class="eyebrow">◆ Decisiones con datos, no promesas</div><h1>El análisis detrás de cada <span>pick.</span></h1><p>Pronósticos deportivos, estadísticas y combinadas con explicaciones claras. Revisa el contexto de cada selección antes de sacar tus propias conclusiones.</p>
+    <div class="hero-actions"><button class="btn gold" onclick="document.querySelector('#pronosticos').scrollIntoView({behavior:'smooth'})">Explorar pronósticos</button><button class="btn" onclick="document.querySelector('#publicar').scrollIntoView({behavior:'smooth'})">Publicar un pick</button></div>
+    <div class="chips" aria-label="Deportes incluidos"><span class="pill">Fútbol</span><span class="pill">NBA</span><span class="pill">MLB</span><span class="pill">NFL</span><span class="pill">LMB</span></div>
+  </div>
+  <aside class="hero-card"><div class="eyebrow">Método GoldenPicks</div><div class="big">Datos + contexto</div><div class="muted">Cada pronóstico debe explicar por qué existe y de dónde salen sus datos.</div><hr><div style="display:flex;justify-content:space-between;gap:12px"><div><strong>01 · Investiga</strong><div class="muted">Forma, lesiones, calendario</div></div><div><strong>02 · Evalúa</strong><div class="muted">Cuotas y probabilidad</div></div></div><hr><div class="muted">No hay apuestas seguras. Incluso una selección con buen análisis puede perder.</div></aside>
+</section>
+<section class="section" id="pronosticos">
+  <div class="section-head"><div><div class="eyebrow">Tablero de picks</div><h2>Pronósticos publicados</h2><div class="sub">Los ejemplos están marcados. Sustituye los datos ficticios antes de publicar.</div></div>
+  <div class="toolbar"><select id="sportFilter" class="field" aria-label="Filtrar por deporte"><option value="Todos">Todos los deportes</option><option>Fútbol</option><option>NBA</option><option>MLB</option><option>NFL</option><option>LMB</option></select><select id="typeFilter" class="field" aria-label="Filtrar por tipo"><option value="Todos">Sencillas y combinadas</option><option value="Sencilla">Sencillas</option><option value="Combinada">Combinadas</option></select></div></div>
+  <div class="cards" id="pickList" aria-live="polite"></div>
+</section>
+<section class="section" id="premium"><div class="eyebrow">Acceso premium</div><h2>Más contexto para cada decisión</h2><p class="sub">Diseño de muestra. Los pagos y el inicio de sesión todavía no están conectados.</p>
+  <div class="premium">
+    <div class="premium-box"><span class="tag demo">PLAN DE EJEMPLO</span><h3>GoldenPicks Premium</h3><div style="font-size:30px;font-weight:900;color:var(--gold)">$149 <span style="font-size:13px;color:var(--muted);font-weight:500">MXN / mes · precio ilustrativo</span></div><ul><li>Análisis ampliado de partidos</li><li>Selecciones sencillas y combinadas</li><li>Historial transparente de resultados</li><li>Notas sobre riesgos y cuotas</li></ul><button class="btn gold" onclick="alert('Demo: conecta un proveedor de pagos y un sistema de usuarios antes de vender suscripciones.')">Activar plan (demo)</button></div>
+    <div class="premium-note"><h3>Qué debe incluir un pick serio</h3><p class="sub">Publica el evento y la hora, mercado, cuota con casa y hora de consulta, explicación, fuente estadística y estado final. Registra también los picks perdedores.</p><div class="notice">La cuota cambia y puede dejar de estar disponible. Una combinada aumenta la dificultad de acertar todas las selecciones. No presentes una estimación como garantía.</div><p class="sub">El contenido premium puede restringirse con autenticación real en la siguiente fase. Ocultar visualmente una tarjeta no protege contenido en una web estática.</p></div>
+  </div>
+</section>
+<section class="section" id="publicar"><div class="eyebrow">Herramienta editorial</div><h2>Publicar un pronóstico</h2><p class="sub">Formulario local para preparar una tarjeta. En esta versión se guarda en este navegador, no en una base de datos compartida.</p>
+  <form id="pickForm" class="pick" style="max-width:760px">
+    <div class="formgrid">
+      <div><label for="sport">Deporte</label><select id="sport" required><option>Fútbol</option><option>NBA</option><option>MLB</option><option>NFL</option><option>LMB</option></select></div>
+      <div><label for="type">Tipo</label><select id="type" required><option>Sencilla</option><option>Combinada</option></select></div>
+      <div class="full"><label for="match">Partido o evento</label><input id="match" required maxlength="100" placeholder="Ej. Equipo A vs. Equipo B"></div>
+      <div><label for="market">Mercado / selección</label><input id="market" required maxlength="100" placeholder="Ej. Más de 2.5 goles"></div>
+      <div><label for="odds">Cuota decimal (opcional)</label><input id="odds" type="number" min="1.01" max="1000" step=".01" placeholder="Ej. 1.85"></div>
+      <div><label for="sourceType">Origen de los datos</label><select id="sourceType"><option>Ficticio / demostración</option><option>Verificado manualmente</option><option>API conectada</option></select></div>
+      <div><label for="status">Estado</label><select id="status"><option>Pendiente</option><option>Ganado</option><option>Perdido</option><option>Anulado</option></select></div>
+      <div class="full"><label for="analysis">Análisis y fuentes</label><textarea id="analysis" required maxlength="500" placeholder="Explica la lógica, indica las fuentes y la fecha/hora de consulta."></textarea></div>
+    </div>
+    <div><button class="btn gold" type="submit">Guardar pronóstico</button> <button class="btn" type="button" id="resetDemo">Restaurar ejemplos</button></div>
+    <div class="admin-status" id="formStatus" role="status">Los datos se guardan solo en este navegador. No ingreses información sensible.</div>
+  </form>
+</section>
+<div class="notice"><strong>Juego responsable:</strong> mayores de edad únicamente. Las apuestas implican riesgo de perder dinero; fija límites, no persigas pérdidas y busca ayuda si el juego deja de ser recreativo. GoldenPicks no garantiza ganancias ni ofrece asesoría financiera.</div>
+</main>
+<footer class="footer"><div class="wrap"><strong>GOLDENPICKS</strong> · Pronósticos informativos, no garantías.<br><span>Demo front-end. Antes de lanzar: verificar requisitos legales locales, privacidad, términos, licencias de datos y pasarela de pagos.</span></div></footer>
+<script>
+const STORAGE_KEY = "goldenpicks-picks-v1";
+const examples = [
+ {id:"demo1",sport:"Fútbol",type:"Sencilla",match:"Equipo A vs. Equipo B",market:"Doble oportunidad 1X",odds:"1.42",analysis:"Ejemplo completamente ficticio. No representa un partido real ni una cuota disponible.",sourceType:"Ficticio / demostración",status:"Pendiente",demo:true},
+ {id:"demo2",sport:"NBA",type:"Sencilla",match:"Equipo C vs. Equipo D",market:"Total de puntos: línea ilustrativa",odds:"1.90",analysis:"Ejemplo ficticio. Para un análisis real, verifica lesiones, descanso, ritmo y la línea vigente.",sourceType:"Ficticio / demostración",status:"Pendiente",demo:true},
+ {id:"demo3",sport:"MLB",type:"Combinada",match:"Selección doble de ejemplo",market:"Dos selecciones ficticias",odds:"2.35",analysis:"Combinada de demostración. No es una recomendación real; cada selección adicional dificulta acertar el conjunto.",sourceType:"Ficticio / demostración",status:"Pendiente",demo:true},
+ {id:"demo4",sport:"NFL",type:"Sencilla",match:"Equipo E vs. Equipo F",market:"Ganador del encuentro (ejemplo)",odds:"1.75",analysis:"Evento y cuota inventados para mostrar el formato. No publicar como dato real.",sourceType:"Ficticio / demostración",status:"Pendiente",demo:true},
+ {id:"demo5",sport:"LMB",type:"Sencilla",match:"Equipo G vs. Equipo H",market:"Carreras totales (ejemplo)",odds:"1.85",analysis:"Ejemplo ficticio. En un pronóstico real, registrar abridores, alineaciones, clima y fuente.",sourceType:"Ficticio / demostración",status:"Pendiente",demo:true}
+];
+function loadPicks(){try{const raw=localStorage.getItem(STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(Array.isArray(parsed))return parsed;}}catch(e){}return examples.map(x=>({...x}));}
+let picks=loadPicks();
+function escapeHTML(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(picks));}catch(e){document.querySelector("#formStatus").textContent="No se pudo guardar localmente. Revisa la configuración del navegador.";}}
+function render(){
+ const sport=document.querySelector("#sportFilter").value,type=document.querySelector("#typeFilter").value;
+ const shown=picks.filter(p=>(sport==="Todos"||p.sport===sport)&&(type==="Todos"||p.type===type));
+ const list=document.querySelector("#pickList");
+ if(!shown.length){list.innerHTML='<div class="empty">No hay pronósticos para estos filtros.</div>';return;}
+ list.innerHTML=shown.map(p=>`<article class="pick">
+ <div class="pick-top"><span class="sport">${escapeHTML(p.sport)} · ${escapeHTML(p.type)}</span><span class="tag ${p.demo||p.sourceType==="Ficticio / demostración"?"demo":""}">${p.demo||p.sourceType==="Ficticio / demostración"?"EJEMPLO FICTICIO":escapeHTML(p.status.toUpperCase())}</span></div>
+ <div><div class="match">${escapeHTML(p.match)}</div><div class="meta">${escapeHTML(p.sourceType)}${p.demo?" · No es dato real":""}</div></div>
+ <div class="prediction"><small>SELECCIÓN / MERCADO</small><strong>${escapeHTML(p.market)}</strong></div>
+ <div class="reason">${escapeHTML(p.analysis)}</div>
+ <div class="card-foot"><div><div class="meta">Cuota decimal ${p.odds? "(indicativa)":""}</div><div class="odds">${p.odds?escapeHTML(p.odds):"No indicada"}</div></div><button class="text-btn" data-detail="${escapeHTML(p.id)}">Ver detalles ↗</button></div>
+ </article>`).join("");
+ list.querySelectorAll("[data-detail]").forEach(btn=>btn.addEventListener("click",()=>{const p=picks.find(x=>x.id===btn.dataset.detail);if(p)alert(`${p.match}\\nDeporte: ${p.sport}\\nTipo: ${p.type}\\nSelección: ${p.market}\\nCuota: ${p.odds||"No indicada"}\\nOrigen: ${p.sourceType}\\nEstado: ${p.status}\\n\\n${p.analysis}\\n\\nLas predicciones no garantizan resultados.`)}));
+}
+document.querySelector("#sportFilter").addEventListener("change",render);
+document.querySelector("#typeFilter").addEventListener("change",render);
+document.querySelector("#pickForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const val=id=>document.getElementById(id).value.trim();
+ const sourceType=val("sourceType");
+ const p={id:"pick-"+Date.now(),sport:val("sport"),type:val("type"),match:val("match"),market:val("market"),odds:val("odds"),analysis:val("analysis"),sourceType,status:val("status"),demo:sourceType==="Ficticio / demostración"};
+ picks.unshift(p);save();render();e.target.reset();
+ document.querySelector("#sportFilter").value="Todos";document.querySelector("#typeFilter").value="Todos";
+ document.querySelector("#formStatus").textContent="Pronóstico añadido en este navegador. Para publicarlo a todos, necesitas backend/base de datos.";
+ document.querySelector("#pronosticos").scrollIntoView({behavior:"smooth"});
+});
+document.querySelector("#resetDemo").addEventListener("click",()=>{if(confirm("¿Restaurar los ejemplos ficticios? Se borrarán los pronósticos guardados en este navegador.")){picks=examples.map(x=>({...x}));save();render();document.querySelector("#formStatus").textContent="Ejemplos ficticios restaurados."; }});
+render();
+</script>
+</body>
+</html>
